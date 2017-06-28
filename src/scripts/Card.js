@@ -1,27 +1,18 @@
-function Card (top, left, right, bottom) {
-  this.top = top;
-  this.left = left;
-  this.right = right;
-  this.bottom = bottom;
-}
-
-Card.prototype.generateCard = function() {
-}
-
-Card.prototype.checkAdjoining = function() {
-}
-
-Card.prototype.checkTop = function() {
-}
-
-Card.prototype.checkBottom = function() {
-}
-
-Card.prototype.checkLeft = function() {
-}
-
-Card.prototype.checkRight = function() {
+function Card (top, right, bottom, left) {
+  this.color = "red";
+  this.position = {x: 0, y: 0};
+  this.values = {
+    top: top,
+    right: right,
+    bottom: bottom,
+    left: left
+  };
 }
 
 Card.prototype.changeColor = function() {
+  // adjoiningCards.forEach(function(i) {
+  //   if(i.isHigherValue()){
+  //     this.color == "red" ? "blue" : "red";
+  //   }
+  // });
 }
