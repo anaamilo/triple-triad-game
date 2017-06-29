@@ -1,21 +1,14 @@
-function Board (width = 3, height = 3) {
+function Board(width = 3, height = 3) {
   this.width = width;
   this.height = height;
 
   this.grid = this.setGrid();
-  this.isFull();
 }
 
 Board.prototype.setGrid = function() {
   return Array.apply(null, Array(this.width)).map(e => Array(this.height));
 }
 
-// Board.prototype.cellIsEmpty = function(x, y) {
-//   return this.grid[x][y] === 0;
-// }
-
-Board.prototype.isFull = function() {
-  return _.compact(_.flatten(this.grid)).length == this.grid.length;
-  // print winner
-  // end game
+Board.prototype.placeCard = function(card, pos) {
+  return this.grid[pos[0]][pos[1]] ? false : this.grid[pos[0]][pos[1]] = card;
 }

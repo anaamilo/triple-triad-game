@@ -1,0 +1,46 @@
+.main-wrapper {
+  width: 990px;
+  margin: 0 auto;
+}
+.main-container {
+  font-family: 'Roboto Slab', serif;
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  background-color: darkblue;
+  box-shadow: 0 0 10px 0px #dedede;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.player1 .card {
+  background-color: #EB3328;
+  background-image: url("rectred.png");
+}
+
+.player2 .card {
+  background-color: #1F4CAC;
+  background-image: url("rectblue.png");
+}
+
+.main-board {
+  display: table;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.main-board .row {
+  display: table-row;
+}
+
+.main-board .cell {
+  display: table-cell;
+  background-color: #dedede;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #d6d6d6;
+}

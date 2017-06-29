@@ -4,7 +4,10 @@ function Player (name, deck) {
   this.deck = deck;
 }
 
-Player.prototype.placeCard = function(pos, card, board) {
-  //   return this.cellIsEmpty ? this.grid[x][y] = player1card1 : console.log("stop it!");
-  this.grid[pos[0]][pos[1]] = card;
+Player.prototype.takeCard = function(card) {
+  this.deck.splice(this.deck.indexOf(card), 1);
+}
+
+Player.prototype.canPlay = function(turn) {
+  return turn == this.name;
 }
