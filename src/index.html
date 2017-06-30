@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Triple Triad Game</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
   <link rel="stylesheet" href="style/main.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
   <script src="scripts/lib/jquery.js"></script>
@@ -160,7 +160,7 @@
       var cell20 = $(".cell-20");
       var cell21 = $(".cell-21");
       var cell22 = $(".cell-22");
-      $(".card").draggable({ snap: true, snapMode: "both" });
+      $(".card").draggable({ snap: true, snapMode: "inner" });
       $(".board td").droppable({ 
         activeClass: "ui-state-highlight",
         drop: function(event, ui){

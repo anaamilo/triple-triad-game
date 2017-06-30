@@ -12,26 +12,25 @@ body {
 }
 
 .main-container {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Alfa Slab One', cursive;
 }
 
 .card {
-  width: 150px;
-  height: 200px;
+  width: 145px;
+  height: 195px;
   display: inline-block;
   -webkit-background-size: cover;
   background-size: cover;
-  border: 2px solid white;
 }
 
 .card.pink {
-  background-image: url("pinkbg.png");
-  background-color: #F7A8DD;
+  background-image: url("pink.png");
+  background-color: #FFE0D3;
 }
 
 .card.green {
-  background-image: url("greenbg.png");
-  background-color: #70ECC0;
+  background-image: url("green.png");
+  background-color: #BED3E9;
 }
 
 .player1 {
@@ -51,18 +50,20 @@ body {
 
 .board {
   margin: 100px auto;
-  box-shadow: 10px 10px 30px 1px lightgray;
+  border-spacing: 0;
+  border-collapse: collapse;
+/*  box-shadow: 10px 10px 30px 1px #3e3e3e;*/
 }
 
 .board td {
   width: 150px;
   height: 200px;
   position: relative;
-  background-image: url("newbg.png");
-  background-color: white;
+  background-color: #f1f1f1;
   -webkit-background-size: cover;
   background-size: cover;
   color: black;
+  border: 5px solid white;
 }
 
 .board td.blue {
@@ -80,8 +81,10 @@ body {
   text-align: center;
   line-height: 50px;
   font-size: 30px;
-  color: gray;
+  color: white;
   line-height: 100px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
 
 .card span.top {
