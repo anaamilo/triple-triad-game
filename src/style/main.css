@@ -1,46 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2C3E50;
+}
+
 .main-wrapper {
   width: 990px;
   margin: 0 auto;
 }
+
 .main-container {
   font-family: 'Roboto Slab', serif;
 }
 
 .card {
   width: 150px;
-  height: 150px;
+  height: 200px;
   display: inline-block;
-  background-color: darkblue;
-  box-shadow: 0 0 10px 0px #dedede;
   -webkit-background-size: cover;
   background-size: cover;
+  border: 2px solid white;
 }
 
 .player1 .card {
-  background-color: #EB3328;
-  background-image: url("rectred.png");
+  background-image: url("pinkbg.png");
 }
 
 .player2 .card {
-  background-color: #1F4CAC;
-  background-image: url("rectblue.png");
+  background-image: url("greenbg.png");
 }
 
-.main-board {
-  display: table;
-  width: 100%;
-  max-width: 450px;
-  margin: 0 auto;
+.player1 {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  max-width: 350px;
 }
 
-.main-board .row {
-  display: table-row;
+.player2 {
+  position: absolute;
+  right: 100px;
+  top: 100px;
+  max-width: 350px;
+  text-align: right;
 }
 
-.main-board .cell {
-  display: table-cell;
-  background-color: #dedede;
+.board {
+  margin: 100px auto;
+}
+
+.board td {
+  border: solid 1px white;
   width: 150px;
-  height: 150px;
-  border: 1px solid #d6d6d6;
+  height: 200px;
+  position: relative;
 }
+
+.board td.blue {
+  background-color: #E74C3C;
+}
+
+.board td.red {
+  background-color: #2980B9;
+}
+
+.board td > span {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+}
+
+.board td .top {
+  left: 25%;
+  top: 0;
+}
+
+.board td .right {
+  right: 0;
+  top: 25%;
+}
+
+.board td .bottom {
+  bottom: 0;
+  left: 25%;
+}
+
+.board td .left {
+  left: 0;
+  top: 25%;
+}
+
