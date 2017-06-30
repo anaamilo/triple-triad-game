@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #2C3E50;
+  background-color: white;
 }
 
 .main-wrapper {
@@ -24,12 +24,14 @@ body {
   border: 2px solid white;
 }
 
-.player1 .card {
+.card.pink {
   background-image: url("pinkbg.png");
+  background-color: #F7A8DD;
 }
 
-.player2 .card {
+.card.green {
   background-image: url("greenbg.png");
+  background-color: #70ECC0;
 }
 
 .player1 {
@@ -49,13 +51,18 @@ body {
 
 .board {
   margin: 100px auto;
+  box-shadow: 10px 10px 30px 1px lightgray;
 }
 
 .board td {
-  border: solid 1px white;
   width: 150px;
   height: 200px;
   position: relative;
+  background-image: url("newbg.png");
+  background-color: white;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: black;
 }
 
 .board td.blue {
@@ -66,30 +73,33 @@ body {
   background-color: #2980B9;
 }
 
-.board td > span {
+.card > span {
   width: 50%;
   height: 50%;
   position: absolute;
   text-align: center;
   line-height: 50px;
+  font-size: 30px;
+  color: gray;
+  line-height: 100px;
 }
 
-.board td .top {
+.card span.top {
   left: 25%;
   top: 0;
 }
 
-.board td .right {
+.card span.right {
   right: 0;
   top: 25%;
 }
 
-.board td .bottom {
+.card span.bottom {
   bottom: 0;
   left: 25%;
 }
 
-.board td .left {
+.card span.left {
   left: 0;
   top: 25%;
 }

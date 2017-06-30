@@ -17,7 +17,9 @@ Board.prototype.setRules = function(card, pos) {
   this.grid[pos[0]][pos[1]] = card;
   
   this.renderBoard();
+  console.log("after render");
   this.checkBigger(card, pos);
+  console.log("it checks!");
 }
 
 Board.prototype.checkBigger = function(card, pos) {

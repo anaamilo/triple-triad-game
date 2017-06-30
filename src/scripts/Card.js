@@ -25,14 +25,14 @@ var card9 = new Card({color: 'red', top: 2, right: 3, bottom: 4, left: 2});
 var deck = [];
 deck.push(card1, card2, card3, card4, card5, card6, card7, card8, card9);
 
-deck.forEach(function(key, i) {  
-  function askPos(param = '') {
-    var place = prompt(param + 'dime la position separada por un espacio, eg: 1 2');
-    place = place.split(' ');
-    if (board.placeCard(key, place)) {
-      askPos('[ERROR]: ');
-    }
-  }
+// deck.forEach(function(key, i) {  
+//   function askPos(param = '') {
+//     var place = prompt(param + 'dime la position separada por un espacio, eg: 1 2');
+//     place = place.split(' ');
+//     if (board.placeCard(key, place)) {
+//       askPos('[ERROR]: ');
+//     }
+//   }
   
-  askPos();
-});
+//   askPos();
+// });
