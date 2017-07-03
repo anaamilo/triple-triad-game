@@ -21,6 +21,11 @@ body {
   display: inline-block;
   -webkit-background-size: cover;
   background-size: cover;
+  position: relative;
+}
+
+.selected-card {
+  border: 2px solid orangered;
 }
 
 .card.pink {
@@ -55,7 +60,7 @@ body {
 /*  box-shadow: 10px 10px 30px 1px #3e3e3e;*/
 }
 
-.board td {
+.cell {
   width: 150px;
   height: 200px;
   position: relative;
@@ -64,14 +69,6 @@ body {
   background-size: cover;
   color: black;
   border: 5px solid white;
-}
-
-.board td.blue {
-  background-color: #E74C3C;
-}
-
-.board td.red {
-  background-color: #2980B9;
 }
 
 .card > span {

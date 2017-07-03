@@ -1,12 +1,9 @@
-var board = new Board();
-var player1 = new Player("red");
-var player2 = new Player("blue");
+player1 = new Player("red");
+player2 = new Player("blue");
 
 function Game () {
   this.players = [player1, player2];
   this.cardsByPlayer = 5;
-
-  this.startGame();
 }
 
 Game.prototype.setCards = function() {
@@ -19,7 +16,7 @@ Game.prototype.setCards = function() {
       left: getRandomValue()
     }));
   }
-  return cardsArray;
+  return _.shuffle(cardsArray);
 }
 
 Game.prototype.setDecks = function() {
@@ -27,12 +24,6 @@ Game.prototype.setDecks = function() {
   for(var i=0; i<newArray.length; i++){
     this.players[i].deck = newArray[i];
   }
-}
-
-Game.prototype.startGame = function() {
-  this.resetScore();
-  board.setGrid();
-  this.setDecks();
 }
 
 Game.prototype.playCard = function(player, card, pos) {
@@ -43,3 +34,47 @@ Game.prototype.playCard = function(player, card, pos) {
 function getRandomValue(min=1, max=6) {
   return Math.floor(Math.random() * ((max + 1) - min) + min);
 }
+
+// //******************************************************************
+// // HTML/CSS Interactions
+// //******************************************************************
+
+var game;
+
+$(document).ready(function(){
+  game = new Game();
+  board = new Board();
+
+  var html = '';
+  board.setGrid();
+  game.setDecks();
+
+  player1.deck.forEach(function(card, index) {
+    html += '<div class="card pink" id="player1_card_' + index + '">';
+    html +=   '<span class="top">'+ card.top + '</span>';
+    html +=   '<span class="right">'+ card.right + '</span>';
+    html +=   '<span class="bottom">'+ card.bottom + '</span>';
+    html +=   '<span class="left">'+ card.left + '</span>';
+    html += '</div>';
+  });
+
+  player2.deck.forEach(function(card, index) {
+    html += '<div class="card green" id="player2_card_' + index + '">';
+    html +=   '<span class="top">'+ card.top + '</span>';
+    html +=   '<span class="right">'+ card.right + '</span>';
+    html +=   '<span class="bottom">'+ card.bottom + '</span>';
+    html +=   '<span class="left">'+ card.left + '</span>';
+    html += '</div>';
+  });
+
+  document.getElementById('main-wrapper').innerHTML = html;
+  $(".card").click(function(){
+    console.log("card clicked!");
+    var selectedPlayer = $(this).closest()
+    var selectedCard = $(this).attr("id");
+    console.log(selectedCard);
+    $(this).siblings().removeClass("selected-card");
+    $(this).addClass("selected-card");
+  });
+
+});

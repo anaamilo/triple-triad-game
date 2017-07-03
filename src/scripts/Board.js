@@ -3,6 +3,7 @@ function Board(width = 3, height = 3) {
   this.height = height;
 
   this.grid = this.setGrid();
+  this.renderBoard();
 }
 
 Board.prototype.setGrid = function() {
@@ -79,30 +80,9 @@ Board.prototype.checkPos = function(x, y, value, side, color) {
 }
 
 Board.prototype.renderBoard = function() {
-  for (var i = 0; i < board.grid.length ; i++) {
-    for (var j = 0; j < board.grid.length ; j++) {
-      if (board.grid[i][j]) {
-        $('.board').find('.cell-' + i + j)
-          .removeClass('red blue')
-          .addClass(board.grid[i][j].color)
-          .find('.top')
-          .html(board.grid[i][j].top);
-        $('.board').find('.cell-' + i + j)
-          .removeClass('red blue')
-          .addClass(board.grid[i][j].color)
-          .find('.right')
-          .html(board.grid[i][j].right);
-        $('.board').find('.cell-' + i + j)
-          .removeClass('red blue')
-          .addClass(board.grid[i][j].color)
-          .find('.bottom')
-          .html(board.grid[i][j].bottom);
-        $('.board').find('.cell-' + i + j)
-          .removeClass('red blue')
-          .addClass(board.grid[i][j].color)
-          .find('.left')
-          .html(board.grid[i][j].left);
-      }
+  for (var i = 0; i < this.grid.length ; i++) {
+    for (var j = 0; j < this.grid.length ; j++) {
+      console.log(this.grid[i][j]);
     }
   }
 }
