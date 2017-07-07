@@ -49,6 +49,11 @@ $(document).ready(function(){
   board.setGrid();
   game.setDecks();
 
+  var card1 = new Card({color: 'red', top: 1, right: 3, bottom: 7, left: 1});
+
+
+  var grid = board.grid;
+
   player1.deck.forEach(function(card, index) {
     html += '<div class="card pink" id="player1_card_' + index + '">';
     html +=   '<span class="top">'+ card.top + '</span>';
@@ -67,14 +72,26 @@ $(document).ready(function(){
     html += '</div>';
   });
 
+  for(var i = 0; i < grid.length; i++) {
+    var row = grid[i];
+    for(var j = 0; j < row.length; j++) {
+      html += '<div class="cell">';
+      html += '</div>';
+    }
+  }
+
   document.getElementById('main-wrapper').innerHTML = html;
   $(".card").click(function(){
     console.log("card clicked!");
-    var selectedPlayer = $(this).closest()
     var selectedCard = $(this).attr("id");
     console.log(selectedCard);
     $(this).siblings().removeClass("selected-card");
     $(this).addClass("selected-card");
   });
+  $(".cell").click(function(){
+    if($(".selected-card")[0]){
+      board.placeCard(card1, [0, 1]);
+    }
+  })
 
 });

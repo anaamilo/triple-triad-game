@@ -82,7 +82,7 @@ Board.prototype.checkPos = function(x, y, value, side, color) {
 Board.prototype.renderBoard = function() {
   for (var i = 0; i < this.grid.length ; i++) {
     for (var j = 0; j < this.grid.length ; j++) {
-      console.log(this.grid[i][j]);
+      console.log(this.grid);
     }
   }
 }
